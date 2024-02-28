@@ -9,7 +9,7 @@ api_key = os.getenv('API_KEY')
 def display_city_cooredinates(city_name):
     print('So you chose to display the coordinates of your chosen city.')
 
-    response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city_name},uk&appid={api_key}")
+    response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city_name}appid={api_key}")
 
     if response.status_code == 404:
         print(f"The city '{city_name}' is not available for the moment!")
