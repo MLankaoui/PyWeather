@@ -48,7 +48,7 @@ def main():
 
         elif input_field == '2':
             city = input("enter the city name : ")
-            display_weather_infosM(city)
+            display_weather_infos(city)
             option_message()
 
 def welcome_to(name):
