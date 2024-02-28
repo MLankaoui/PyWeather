@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 from coordinates import display_city_cooredinates
 from weather_infos import display_weather_infos
+from main_infos import display_main_infos
 
 load_dotenv()  # take environment variables from .env.
 api_key = os.getenv('API_KEY')
@@ -49,6 +50,11 @@ def main():
         elif input_field == '2':
             city = input("enter the city name : ")
             display_weather_infos(city)
+            option_message()
+
+        elif input_field == '3':
+            city = input("enter the city name : ")
+            display_main_infos(city)
             option_message()
 
 def welcome_to(name):
