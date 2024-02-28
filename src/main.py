@@ -2,6 +2,7 @@ import requests
 from dotenv import load_dotenv
 import os
 from coordinates import display_city_cooredinates
+from weather_infos import display_weather_infos
 
 load_dotenv()  # take environment variables from .env.
 api_key = os.getenv('API_KEY')
@@ -41,8 +42,13 @@ def main():
             print('exiting...')
             exit(1)
         elif input_field == '1':
-            city = input("enter the city name")
+            city = input("enter the city name : ")
             display_city_cooredinates(city)
+            option_message()
+
+        elif input_field == '2':
+            city = input("enter the city name : ")
+            display_weather_infosM(city)
             option_message()
 
 def welcome_to(name):
