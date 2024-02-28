@@ -4,6 +4,8 @@ import os
 from coordinates import display_city_cooredinates
 from weather_infos import display_weather_infos
 from main_infos import display_main_infos
+from city_visibility import display_city_visibility
+from over_all_infos import display_over_all_infos
 
 load_dotenv()  # take environment variables from .env.
 api_key = os.getenv('API_KEY')
@@ -20,7 +22,7 @@ def main():
     user_name = input("please enter a user_name : ")
 
     while user_name == "":
-        user_name = input("please enter a user_name : ")
+        user_name = input("please enter a user_name : ").upper()
 
     else:
         welcome_to(user_name)
@@ -33,10 +35,9 @@ def main():
         if input_field == "options":
             print("1) to see the coordinates of your chosen city")
             print("2) to see weather informations")
-            print("3) to see the base")
-            print("4) to see main informations")
-            print("5) to see visibility")
-            print("6) to see the city overall informations")
+            print("3) to see main informations")
+            print("4) to see visibility")
+            print("5) to see the city overall informations")
             print('and please enter quit if you want to exit the program')
 
         elif input_field == 'quit':
@@ -57,11 +58,23 @@ def main():
             display_main_infos(city)
             option_message()
 
+        elif input_field == '4':
+            city = input("enter the city name : ")
+            display_city_visibility(city)
+            option_message()
+
+        elif input_field == '5':
+            city = input("enter the city name : ")
+            display_over_all_infos(city)
+            option_message()
+
+
+
 def welcome_to(name):
     print(f"welcome mr(s) {name}")
     print("to the python weather app which generates real-time weather info about a city")
 
 def option_message():
-    print("options to see the available options")
+    print("please : 'options' to see the available options")
 
 main()

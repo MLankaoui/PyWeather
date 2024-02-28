@@ -6,7 +6,7 @@ load_dotenv()  # take environment variables from .env.
 api_key = os.getenv('API_KEY')
 
 def display_main_infos(city_name):
-    print('So you chose to display the weather infos of your chosen city.')
+    print('So you chose to display the main infos of your chosen city.')
 
     response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}")
 
